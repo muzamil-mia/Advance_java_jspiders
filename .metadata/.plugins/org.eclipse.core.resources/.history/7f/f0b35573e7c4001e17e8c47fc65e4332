@@ -1,0 +1,14 @@
+package jdbc_4_controller;
+import 
+import java.util.ArrayList;
+import java.util.List;
+
+public class StudentMain {
+
+	public static void main(String[] args) {
+		List<StudentMain> list = new ArrayList<>();
+		list.add(new Student(8, "alok", "alok@gmail", 93764948, "alok@123", 60.5));
+		
+	}
+
+}

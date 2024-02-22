@@ -1,0 +1,5 @@
+package jdbc_4_dao;
+
+public class DatabaseConnection {
+
+}

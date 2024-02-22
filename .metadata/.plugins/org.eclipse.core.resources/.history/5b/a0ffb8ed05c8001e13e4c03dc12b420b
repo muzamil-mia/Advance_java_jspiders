@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{
+background-color:red;
+}
+h2{
+color: red;
+font-size:28px;
+}
+</style>
+</head>
+<body>
+<h2>Name: Muzamil Hussain</h2>
+<h2>Qualification: Btech</h2>
+<h2>Address: Hyderabad</h2>
+<h2></h2>
+</body>
+</html>

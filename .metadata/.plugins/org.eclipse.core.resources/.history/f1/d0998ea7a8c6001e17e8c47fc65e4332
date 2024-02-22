@@ -1,0 +1,10 @@
+package controller;
+
+public class Gadgets {
+
+	public static void main(String[] args) {
+		Gadget gadget = new Gadget();
+		
+	}
+
+}

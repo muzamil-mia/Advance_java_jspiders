@@ -1,0 +1,26 @@
+package com.jsp.employee_servlet_project.controller;
+
+import java.io.IOException;
+
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("/save")
+public class RegisterEmployee extends GenericServlet{
+
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+		String name = req.getParameter("name");
+		System.out.println(name);
+		String mail = req.getParameter("mail");
+		long phone = Integer.parseInt(req.getParameter("phone"));
+		String pwd = req.getParameter("password");
+		int age = Integer.parseInt(req.getParameter("age"));
+		String desig = req.getParameter("designation");
+		Double sal = (double) Integer.parseInt(req.getParameter("sal"));
+	}
+
+}

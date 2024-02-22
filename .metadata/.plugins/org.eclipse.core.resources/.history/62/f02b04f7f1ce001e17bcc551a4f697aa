@@ -1,0 +1,5 @@
+package com.jsp.employee_servlet_project.dao;
+
+public class DatabaseConnection {
+
+}

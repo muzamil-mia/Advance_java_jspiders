@@ -1,0 +1,200 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import controller.User;
+import dto.Customer;
+import dto.Gadget;
+
+public class UserCrud {
+	static Scanner sc = new Scanner(System.in);
+	public void createTable() {
+		Connection con = Database.getConnection();
+		try {
+			Statement stm = con.createStatement();
+			stm.execute("create table if not exists customer(email varchar(45), password varchar(45), wallet double)");
+			stm.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public void registerUser(Customer customer) {
+		Connection con = Database.getConnection();
+		try {
+			PreparedStatement checkStmt = con.prepareStatement("select * from student where eamil = ?");
+			checkStmt.setString(1,customer.getEmail());
+			ResultSet res = checkStmt.executeQuery();
+			while(res.next()) {
+				System.out.println("user laready exists");
+				return;
+			}
+			PreparedStatement ps = con.prepareStatement("insert into customer values(?,?,?)");
+			ps.setString(1, customer.getEmail());
+			ps.setString(2, customer.getPwd());
+			ps.setDouble(3, customer.getWallet());
+			ps.execute();
+			ps.close();
+			con.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public boolean chooseLogin(String mail, String pwd) {
+		System.out.println("checking login details");
+		Connection con = Database.getConnection();
+		try {
+			Statement stm = con.createStatement();
+			ResultSet res = stm.executeQuery("select * from customer");
+			if(!res.next()) {
+				System.out.println("no data found");
+				User.registerUser();
+			}else {
+				do {
+					String email = res.getString(1);
+					String password = res.getString(2);
+					if(email.equalsIgnoreCase(mail) && password.equalsIgnoreCase(pwd)) {
+						stm.close();
+						con.close();
+						return true;
+					}
+				}while(res.next());
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	public void addGadgets(List<Gadget> list) {
+		Connection con = Database.getConnection();
+		try {
+			 PreparedStatement ps = con.prepareStatement("insert into gadgets values(?,?,?)");
+			 for(Gadget gad : list) {
+				 ps.setInt(1, gad.getId());
+				 ps.setString(2, gad.getPhoneName());
+				 ps.setDouble(3, gad.getPrice());
+				 ps.addBatch();
+			 }
+			 ps.executeBatch();
+			 ps.close();
+			 con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+//	public void showItems() {
+//		UserCrud  crud = new UserCrud();
+//		List<Gadget> list = new ArrayList<>();
+//		list.add(new Gadget("Samsung", "S9 Plus", 7.5, 60000,1));
+//		list.add(new Gadget("Redmi", "Redmi 9", 7.8, 20000,2));
+//		list.add(new Gadget("Apple", "Iphone 14", 6.6, 100000,3));
+////		crud.addGadgets(list);
+//		for(Gadget gadget : list) {
+//			System.out.println(gadget);
+//		}
+//		System.out.println("want to buy any item \n 1. Yes \n 2. No");
+//		int choice = sc.nextInt();
+//		boolean yes = false;
+//		int id = 0;
+//		if(choice == 1) {
+//			yes = true;
+//			System.out.println("enter the id");
+//			id = sc.nextInt();
+////			crud.proceedPurchase(id);
+//		}
+//		for(Gadget gadget : list) {
+//			if(gadget.getId() == id) {
+//				crud.proceedPurchase(gadget);
+//				System.out.println("item purchased successfully");
+//			}
+//		}
+//		try {
+//			Class.forName("com.mysql.cj.jdbc.Driver");
+//			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gadgetsdb","root","root");
+//			 PreparedStatement ps = con.prepareStatement("slect * from gadgets");
+//			 ResultSet res = ps.executeQuery("select * from gadgets");
+//			 while(res.next()) {
+//				 System.out.println("id: " + res.getInt(1) + " Brand Name: " + res.getString(2) + " Phone Name: " + res.getString(3) + " Price: " + res.getDouble(4));
+//			 }
+//			 ps.close();
+//			 con.close();
+//		} catch (ClassNotFoundException | SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+	public void proceedPurchase(Gadget gadget) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/customerdb","root","root");
+			 PreparedStatement ps = con.prepareStatement("update customer set wallet = ?");
+			 ResultSet res = ps.executeQuery("select * from customer");
+			 while(res.next()) {
+				 //System.out.println("id: " + res.getInt(1) + " Brand Name: " + res.getString(2) + " Phone Name: " + res.getString(3) + " Price: " + res.getDouble(4));
+				 double wallet = res.getDouble(3);
+				 if(wallet < gadget.getPrice()) {
+					 System.out.println("insufficient balance please add money to wallet");
+					double newWallet = updateWallet(res.getString(1));
+					ps.setDouble(1, newWallet);
+					wallet = wallet - gadget.getPrice();
+					 ps.setDouble(1, wallet);
+					 System.out.println("wallet updated successfully");
+//					ps.execute();
+				 }else {
+					 //System.out.println();
+					 wallet = wallet - gadget.getPrice();
+					 ps.setDouble(1, wallet);
+					 System.out.println("wallet updated successfully");
+//					 ps.execute();
+//					 double amount = res.getDouble(4);
+//					 System.out.println(amount);
+				 }
+				
+			 }
+			 ps.execute();
+			 ps.close();
+			 con.close();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	private double updateWallet(String mail) {
+		System.out.println("enter the amount you want to add to wallet");
+		double amount = sc.nextDouble();
+		return amount;
+	}
+	public void showItems() {
+		// TODO Auto-generated method stub
+		System.out.println("no items to show");
+		Connection con = Database.getConnection();
+		try {
+			Statement stm = con.createStatement();
+			ResultSet res = stm.executeQuery("select * from gadgets");
+			while(res.next()) {
+				System.out.println(res.getInt(1) + " " + res.getString(2)+ " "+ res.getDouble(3));
+			}
+			stm.close();
+			res.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+
+

@@ -1,0 +1,21 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import dao.UserCrud;
+import dto.Gadget;
+
+public class Gadgets {
+
+	public static void main(String[] args) {
+		UserCrud  crud = new UserCrud();
+		List<Gadget> list = new ArrayList<>();
+		list.add(new Gadget("Samsung", "S9 Plus", 7.5, 60000,1));
+		list.add(new Gadget("Redmi", "Redmi 9", 7.8, 20000,2));
+		list.add(new Gadget("Apple", "Iphone 14", 6.6, 100000,3));
+		crud.addGadgets(list);
+	}
+
+}

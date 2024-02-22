@@ -1,0 +1,13 @@
+package dto;
+
+public class Customer {
+	private String email;
+	private String pwd;
+	private double wallet;
+	public User(String email, String pwd, double wallet) {
+		super();
+		this.email = email;
+		this.pwd = pwd;
+		this.wallet = wallet;
+	}
+}

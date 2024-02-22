@@ -1,0 +1,76 @@
+package controller;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Scanner;
+
+import dao.Database;
+import dao.UserCrud;
+import dto.Customer;
+
+public class User {
+	static Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) {
+			UserCrud crud = new UserCrud();
+			crud.createTable();
+			Connection con = Database.getConnection();
+			boolean flag = true;
+			do {
+				System.out.println("Enter the option below \n 1. User \n 2. Gadget \n 3. Exit");
+				int option = sc.nextInt();
+				switch(option) {
+				case 1: {
+					System.out.println("choose to registe or login \n 1. Register \n 2.Login");
+					int opt = sc.nextInt();
+					switch(opt) {
+					case 1: registerUser();
+					break;
+					case 2: if(chooseToLogin()) {
+						System.out.println("login successfull");
+					}else {
+						System.out.println("please register yourself");
+						registerUser();
+					};
+					}
+				}
+				break;
+				case 2:
+				}
+			}while(flag);
+		}
+	private static void registerUser() {
+		System.out.println("enter your eamil");
+		String mail = sc.next();
+		System.out.println("enter the password");
+		String password = sc.next();
+		System.out.println("enter the wallet amount");
+		double wallet = sc.nextDouble();
+		Customer customer = new Customer(mail, password, wallet);
+		UserCrud crud = new UserCrud();
+		crud.registerUser(customer);
+	}
+
+	private static boolean chooseToLogin() {
+		System.out.println("enter the email");
+		String mail = sc.next();
+		System.out.println("enter the password");
+		String pwd = sc.next();
+		Connection con = Database.getConnection();
+		try {
+			PreparedStatement ps = con.prepareStatement("select * from customer where email = ? and pwd = ?");
+			ResultSet res = ps.executeQuery();
+			while(res.next()) {
+				String mail1 = res.getString(1);
+				String pwd1 = res.getString(2);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+}

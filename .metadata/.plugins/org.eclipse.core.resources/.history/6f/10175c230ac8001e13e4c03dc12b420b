@@ -1,0 +1,5 @@
+package servlet_demo;
+
+public class Demo1 implements Servlet{
+
+}

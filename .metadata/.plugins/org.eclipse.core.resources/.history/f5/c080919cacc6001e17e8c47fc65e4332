@@ -1,0 +1,108 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import controller.User;
+import dto.Customer;
+import dto.Gadget;
+
+public class UserCrud {
+	public void createTable() {
+		Connection con = Database.getConnection();
+		try {
+			Statement stm = con.createStatement();
+			stm.execute("create table if not exists customer(email varchar(45), password varchar(45), wallet double)");
+			stm.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public void registerUser(Customer customer) {
+		Connection con = Database.getConnection();
+		try {
+			PreparedStatement ps = con.prepareStatement("insert into customer values(?,?,?)");
+			ps.setString(1, customer.getEmail());
+			ps.setString(2, customer.getPwd());
+			ps.setDouble(3, customer.getWallet());
+			ps.execute();
+			ps.close();
+			con.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public boolean chooseLogin(String mail, String pwd) {
+		System.out.println("checking login details");
+		Connection con = Database.getConnection();
+		try {
+			Statement stm = con.createStatement();
+			ResultSet res = stm.executeQuery("select * from customer");
+			if(!res.next()) {
+				System.out.println("no data found");
+				User.registerUser();
+			}else {
+				do {
+					String email = res.getString(1);
+					String password = res.getString(2);
+					if(email.equalsIgnoreCase(mail) && password.equalsIgnoreCase(pwd)) {
+						stm.close();
+						con.close();
+						return true;
+					}
+				}while(res.next());
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	public void addGadgets(List<Gadget> list) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gadgetsdb","root","root");
+			 PreparedStatement ps = con.prepareStatement("insert into gadgets values(?,?,?,?)");
+			 for(Gadget gad : list) {
+				 ps.setInt(1, gad.getId());
+				 ps.setString(2, gad.getBrandName());
+				 ps.setString(3, gad.getPhoneName());
+				 ps.setDouble(4, gad.getPrice());
+				 ps.addBatch();
+			 }
+			 ps.executeBatch();
+			 ps.close();
+			 con.close();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	public void showItems() {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gadgetsdb","root","root");
+			 PreparedStatement ps = con.prepareStatement("slect * from gadgets");
+			 ResultSet res = ps.executeQuery("select * from gadgets");
+			 while(res.next()) {
+				 System.out.println("id: " + res.getInt(1) + " Brand Name: " + res.getString(2) + " Phone Name: " + res.getString(3) + " Price: " + res.getDouble(4));
+			 }
+			 ps.close();
+			 con.close();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+
+

@@ -1,0 +1,60 @@
+package com.jsp.employee_servlet_project.controller;
+
+import java.io.IOException;
+
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
+
+import com.jsp.employee_servlet_project.dao.EmployeeCrud;
+import com.jsp.employee_servlet_project.dto.Employee;
+
+@WebServlet("/save")
+public class RegisterEmployee extends GenericServlet {
+
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+		String name = req.getParameter("name");
+		//System.out.println(name);
+		String mail = req.getParameter("email");
+		//System.out.println(mail);
+		String phoneString = req.getParameter("phone");
+		String pwd = req.getParameter("password");
+		String ageString = req.getParameter("age");
+		String desig = req.getParameter("designation");
+		String salString =  req.getParameter("salaray");
+		String address = req.getParameter("address");
+		
+		//validate and parse phone number
+		long phone = 0;
+		try {
+			if(phoneString != null && !phoneString.isEmpty()) {
+				phone = Long.parseLong(phoneString);
+			}
+		} catch (NumberFormatException e) {
+			System.out.println("invalid phone number");
+		}
+		
+		int age = 0;
+		try {
+			if(ageString != null && !ageString.isEmpty()) {
+				age = Integer.parseInt(ageString);
+			}
+			}catch (NumberFormatException e) {
+				System.out.println("invalid age");
+			}
+		Double sal = 0.0;
+		try {
+			if(salString != null && !salString.isEmpty()) {
+				sal = Double.parseDouble(salString);
+			}
+		}catch(NumberFormatException e) {
+			System.out.println("invalid salary");
+		}
+//		Employee emp = new Employee(name, mail, phone, pwd, age, desig, sal, address);
+//		EmployeeCrud crud = new EmployeeCrud();
+//		crud.saveEmployee(emp);
+	}
+}

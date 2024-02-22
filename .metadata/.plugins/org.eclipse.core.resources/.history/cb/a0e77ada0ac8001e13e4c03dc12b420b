@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+input{
+padding: 4px 4px;
+border: 2px solid;
+margin:4px;
+}
+</style>
+</head>
+<body>
+<input type = "text"/>
+<input type = "text"/>
+<input type = "text"/>
+</body>
+</html>

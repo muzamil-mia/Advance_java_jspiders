@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+input{
+padding: 4px 4px;
+border: 2px solid;
+margin:4px;
+}
+</style>
+</head>
+<body>
+<form action = "add">
+Enter Value 1: <input type = "number" value = "num1"/>
+<br>
+Enter Value 1: <input type = "number" value = "num2"/>
+<br>
+Enter Value 1: <input type = "number" value = "num3"/>
+<br>
+<button>Add</button>
+http://localhost:8080/servlet_demo/addition.html?
+</form>
+</body>
+</html>

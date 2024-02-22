@@ -1,0 +1,24 @@
+package jdbc_4_controller;
+ 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import jdbc_4_dto.Student;
+
+public class StudentMain {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	
+		List<Student> list = new ArrayList<>();
+//		list.add(new Student(8, "alok", "alok@gmail", 93764948, "alok@123", 60.5));
+//		list.add(new Student())
+		boolean flag = true;
+		do {
+			
+		}while(flag);
+		
+	}
+
+	}

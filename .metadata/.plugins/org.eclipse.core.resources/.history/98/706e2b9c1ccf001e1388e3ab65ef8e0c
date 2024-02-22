@@ -1,0 +1,16 @@
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+	<h1>Welcome to employee project</h1>
+	<button>
+		<a href="login.html">SIGIN</a>
+	</button>
+	<button>
+		<a href="register.html">SIGNUP</a>
+	</button>
+</body>
+</html>

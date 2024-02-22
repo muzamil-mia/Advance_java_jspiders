@@ -1,0 +1,24 @@
+package com.jsp.employee_servlet_project.controller;
+
+import java.io.IOException;
+
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
+
+import com.jsp.employee_servlet_project.dao.EmployeeCrud;
+
+@WebServlet("/login")
+public class Login extends GenericServlet {
+
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+		String email = req.getParameter("email");
+		String password = req.getParameter("password");
+		//System.out.println(email);
+		EmployeeCrud crud = new EmployeeCrud();
+		crud.login(email);
+	}
+}

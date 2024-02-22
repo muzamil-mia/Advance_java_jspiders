@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+#login {
+        min-height: 300px;
+        border: 2px solid;
+        width: 400px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border: none;
+        margin: auto;
+      }
+      form h2 {
+        text-align: center;
+        padding: 10px 0;
+      }
+      form div {
+        margin-left: 15px;
+      }
+      form div label {
+        font-size: 20px;
+        display: inline-block;
+        padding: 5px;
+      }
+      form div input {
+        display: inline-block;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        padding: 5px;
+        margin-bottom: 10px;
+        width: 80%;
+      }
+      .login {
+        display: block;
+        width: 70%;
+        margin: auto;
+        margin: 30px auto;
+        padding: 10px 0;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+      }
+      .login:hover{
+        background-color: #ccc;
+        transition: all 1s;
+      }
+</style>
+</head>
+<body>
+
+<form id="login" action="login">
+      <h2>Login</h2>
+      <div>
+        <label for="Email">Email</label>
+        <br />
+        <input type="text" name="email" placeholder="@gmail.com" />
+        <br />
+        <label for="password">Password</label><br />
+        <input type="password" name="password" id="" placeholder="password" />
+        <br />
+      </div>
+      <button class="login">login</button>
+    </form>
+</body>
+</html>

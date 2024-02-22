@@ -1,0 +1,22 @@
+package dto;
+
+public class Gadget {
+	private String brandName;
+	private String phoneName;
+	private double size;
+	private int price;
+	private double battery;
+	private double version;
+	public Gadget(String brandName, String phoneName, double size, int price, double battery, double version) {
+		super();
+		this.brandName = brandName;
+		this.phoneName = phoneName;
+		this.size = size;
+		this.price = price;
+		this.battery = battery;
+		this.version = version;
+	}
+	public Gadget() {
+		super();
+	}
+}

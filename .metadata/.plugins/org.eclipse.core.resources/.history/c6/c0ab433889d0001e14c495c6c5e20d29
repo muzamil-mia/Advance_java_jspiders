@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+*{
+        padding: 0;
+        margin: 0;
+
+      }
+      h1{
+        text-align: center;
+        margin-top: 30px;
+      }
+      div{
+        /* border: 2px solid; */
+        margin-top: 40px;
+        width: 400px;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+      }
+      button{
+        width: 150px;
+        padding: 10px 20px;
+        display: block;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border: none;
+      }
+      button a{
+        text-decoration: none;
+        font-weight: bolder;
+        font-size: 20px;
+      }
+      button:hover{
+        background-color: aliceblue;
+        transition: all 1s;
+      }
+      button:hover a{
+        color: black;
+        transition: all 1s;
+      }
+</style>
+</head>
+<body>
+	<h1>Welcome to employee project</h1>
+	<div>
+    <button>
+      <a href="login.html">SIGIN</a>
+    </button>
+    <button>
+      <a href="register.html">SIGNUP</a>
+    </button>
+  </div>
+</body>
+</html>

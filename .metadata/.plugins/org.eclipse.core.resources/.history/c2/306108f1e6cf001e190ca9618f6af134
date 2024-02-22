@@ -1,0 +1,100 @@
+package com.jsp.employee_servlet_project.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import com.jsp.employee_servlet_project.dto.Employee;
+
+public class EmployeeCrud {
+	
+	public void createTable() {
+		Connection con = DatabaseConnection.getConnection();
+		try {
+			Statement stm = con.createStatement();
+			stm.execute("create table if not exists employee(name varchar(45), email varchar(45) primary key, phone bigint, password varchar(45), age int, designation varchar(45), salary double, address varchar(45) )");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public String saveEmployee(Employee emp) {
+		EmployeeCrud createTable = new EmployeeCrud();
+		createTable.createTable();
+		Connection con = DatabaseConnection.getConnection();
+		System.out.println("table created successfully");
+		try {
+			PreparedStatement stm = con.prepareStatement("insert into employee values(?,?,?,?,?,?,?,?)");
+			stm.setString(1, emp.getName());
+			stm.setString(2, emp.getMail());
+			stm.setLong(3, emp.getPhone());
+			stm.setString(4, emp.getPwd());
+			stm.setInt(5, emp.getAge());
+			stm.setString(6, emp.getDesig());
+			stm.setDouble(7, emp.getSal());
+			stm.setString(8, emp.getAddress());
+			stm.execute();
+			stm.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "saved successfully";
+	}
+	
+	public void fetchEmployee(String mail) {
+		Connection con = DatabaseConnection.getConnection();
+		try {
+			PreparedStatement ps = con.prepareStatement("select * from employee where email = ?");
+			ps.setString(1, mail);
+			ResultSet res = ps.executeQuery();
+			if(!res.next()) {
+				System.out.println("no data found");
+			}else {
+				System.out.println(res.getString(1));
+				System.out.println(res.getString(2));
+				System.out.println(res.getLong(3));
+				System.out.println(res.getString(4));
+				System.out.println(res.getInt(5));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteEmployee(String mail) {
+		
+	}
+	
+public void updateEmployee(Employee emp) {
+		
+	}
+	
+	public List<Employee> fetchAllEmployee() {
+		return null;
+		
+	}
+
+	public void login(String email) {
+		Connection con = DatabaseConnection.getConnection();
+		try {
+			PreparedStatement ps = con.prepareStatement("select * from employee where email = ?");
+			ps.setString(1, email);
+			ResultSet res = ps.executeQuery();
+			if(!res.next()) {
+				System.out.println("you are not registered");
+			}else {
+				System.out.println("login successfull");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

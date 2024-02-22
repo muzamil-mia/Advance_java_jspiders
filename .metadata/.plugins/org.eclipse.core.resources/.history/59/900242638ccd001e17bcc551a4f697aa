@@ -1,0 +1,6 @@
+package com.jsp.emp_servlet.employee.controller;
+
+
+public class RegisterEmployee extends GenericServlet{
+	
+}
