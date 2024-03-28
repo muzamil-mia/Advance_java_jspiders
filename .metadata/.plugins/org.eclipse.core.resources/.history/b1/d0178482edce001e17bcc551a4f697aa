@@ -1,5 +1,0 @@
-package com.jsp.employee_servlet_project.dto;
-
-public class Employee {
-
-}

@@ -2,6 +2,9 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\KIIT\OneDrive\Desktop\Advance-java\employee_servlet_project"/>
+			<item value="C:\Users\KIIT\OneDrive\Desktop\Advance-java\LoginApplication"/>
+			<item value="C:\Users\KIIT\OneDrive\Desktop\Advance-java\employee_servlet_project\src\main\webapp\login.jsp"/>
 			<item value="C:\Users\KIIT\OneDrive\Desktop\Advance-java\servlet_demo\src\main\java\servlet_demo\Subtraction.java"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,13 +29,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.jsp.employee_servlet_project"/>
 		</list>
 		<list key="groupId">
-			<item value="com.jsp"/>
 		</list>
 		<list key="artifactId">
-			<item value="employee_servlet_project"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -48,10 +48,17 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.jsp"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="many_to_one_uni"/>
+			<item value="one_to_many_uni"/>
+			<item value="one_one_uni"/>
+			<item value="advance-mock"/>
+			<item value="Hibernate2"/>
+			<item value="hbernate_1"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

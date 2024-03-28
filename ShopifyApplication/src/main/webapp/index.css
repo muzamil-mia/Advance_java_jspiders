@@ -1,0 +1,218 @@
+@charset "ISO-8859-1";
+*{
+  padding: 0;
+  margin: 0;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: black;
+  
+}
+html {
+  scroll-behavior: smooth;
+}
+
+main{
+  border: 2px solid;
+  min-height: 500px;
+}
+#header{
+  height:  80px;
+  width: 100%;
+  border: 2px solid;
+}
+#nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid blue; */
+  height: inherit;
+  background-color: rgb(23, 21, 21);
+}
+
+#sub-nav {
+  width: 90%;
+  /* border: 2px solid green; */
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  height: 90%;
+  align-items: center;
+  background-color: rgb(23, 21, 21);
+}
+#sub-nav .tabs{
+  display: inline-flex;
+  /* border: 2px solid white; */
+  justify-content: space-between;
+  width: 280px;
+  background-color: rgb(23, 21, 21);
+}
+.tabs h3{
+  /* border: 2px solid; */
+  padding: 10px 30px;
+  font-weight: bolder;
+  font-size: 25px;
+  letter-spacing: 2px;
+  line-height: 28px;
+  background-color: rgb(248, 69, 3);
+  border: none;
+  color: white;
+}
+.tabs h3:hover{
+  color: black;
+  cursor: pointer;
+  transition: all 0.5s;
+  background-color: rgb(23, 21, 21);
+  color: white;
+}
+.logo{
+  /* border: 2px solid; */
+  width: 250px;
+}
+.logo h2{
+  padding: 10px 0px;
+  background-color: rgb(23, 21, 21);
+  text-align: start;
+  letter-spacing: 8px;
+  font-size: 30px;
+  color: rgb(248, 69, 3);
+}
+.logo h2:hover{
+  color: white;
+  transition: all .5s;
+  cursor: pointer;
+}
+
+#body {
+  /* border: 2px solid white; */
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#heading {
+  font-family: cursive;
+  font-size: large;
+  text-shadow: 2px 2px 4px rgba(252, 251, 251, 0.4);
+  color:rgb(248, 69, 3)
+}
+.login-block1 {
+  border: 2px solid white;
+  min-height: 450px;
+  width: 350px;
+  right: 100px;
+  top: 180px;
+  position: absolute;
+  display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.login-block2 {
+  border: 2px solid white;
+  min-height: 450px;
+  width: 350px;
+  right: 100px;
+  top: 180px;
+  position: absolute;
+  display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.radio-container{
+  margin-top: 20px;
+  display: inline-block;
+  color: white;
+  position: relative;
+  padding-left: 13px;
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+input[type="radio"]{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Style the label text */
+
+
+
+label{
+  color: white;
+  display: block;
+  padding: 10px;
+  font-size: 22px;
+}
+.form h2 {
+  text-align: center;
+  margin: 20px 0px;
+}
+.form input{
+  width: 100%;
+  height: 40px;
+ 
+}
+.form input[type = "submit"] {
+  color: white;
+  border: 2px solid white;
+  margin-top: 10px;
+  display: block;
+  width: 80%;
+  margin: 25px auto;
+  font-size: 22px;
+  border-radius: 6px;
+  background-color: rgb(248, 69, 3);
+  border: none;
+  
+}
+input[type = "email"], input[type="password"] {
+  color: #fff;
+  box-sizing: border-box;
+ padding-left: 10px;
+ font-size: 14px;
+}
+.form input[type = "submit"]:hover{
+  color: black;
+  cursor: pointer;
+  transition: all 0.5s;
+  background-color: rgb(23, 21, 21);
+  color: white;
+}
+input::placeholder{
+  padding-left: 9px;
+  color: white;
+}
+input:focus{
+  outline: none;
+}
+/* .choose{
+  color: white;
+  border: 2px solid white;
+  display: inline-block;
+  margin: 15px 0px 0px 5px;
+  padding: 5px;
+  font-size: 22px;
+} */
+.register{
+  /* border: 2px solid white; */
+  width: 90%;
+  margin: auto;
+  padding: 2px;
+  text-align: center;
+}
+.register a{
+  color: rgb(227, 129, 93);
+  text-decoration: none;
+}
+.forget{
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  
+}
+.forget a {
+  color: rgb(227, 129, 93);
+  text-decoration: none;
+}
+
+
