@@ -1,0 +1,22 @@
+package studentSpring;
+
+public class Batch {
+	private int rNo;
+	private String Stream;
+	@Override
+	public String toString() {
+		return "Batch [rNo=" + rNo + ", Stream=" + Stream + "]";
+	}
+	public int getrNo() {
+		return rNo;
+	}
+	public void setrNo(int rNo) {
+		this.rNo = rNo;
+	}
+	public String getStream() {
+		return Stream;
+	}
+	public void setStream(String stream) {
+		Stream = stream;
+	}
+}

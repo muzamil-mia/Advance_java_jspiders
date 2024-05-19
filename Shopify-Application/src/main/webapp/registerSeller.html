@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./registerSeller.css">
+</head>
+<form action="registerseller" id="form" method = "POST">
+      <h1>Sign Up</h1>
+      <fieldset>
+        <legend><span class="number">!</span>Your Basic Info</legend>
+        <label for="firstname">First Name</label>
+        <input
+          type="text"
+          name="first-name"
+          id=""
+          placeholder="First Name"
+          required
+        />
+        <label for="lastname">Last Name</label>
+        <input type="text" name="last-name" placeholder="Last Name" required />
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="@gmail.com" required />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          required
+          placeholder="**********"
+        />
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone" required placeholder="+91" />
+        <label for="address">Address</label>
+        <textarea
+          name="address"
+          id=""
+          cols="20"
+          rows="7"
+          placeholder="...."
+        ></textarea>
+      </fieldset>
+      <button>Register</button>
+      <p> Already have an account? <a href="index.jsp">login</a></p>
+    </form>
+</body>
+</html>

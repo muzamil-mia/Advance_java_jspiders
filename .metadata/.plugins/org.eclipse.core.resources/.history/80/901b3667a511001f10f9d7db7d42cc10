@@ -1,0 +1,8 @@
+package controller;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
+
+public class Main {
+	EntityManager em = Persistence.createEntityManagerFactory("muzamil").createEntityManager();
+}

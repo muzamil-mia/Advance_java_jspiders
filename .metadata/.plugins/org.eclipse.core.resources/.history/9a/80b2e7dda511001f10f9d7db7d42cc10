@@ -1,0 +1,16 @@
+package one_to_many_bi.dto;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class SocialMedia {
+	
+	@Id
+	private int id;
+	
+	@ManyToOne
+	private Person p;
+	
+}

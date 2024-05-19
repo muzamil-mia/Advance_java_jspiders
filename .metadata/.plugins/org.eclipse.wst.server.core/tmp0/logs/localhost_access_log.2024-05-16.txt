@@ -1,0 +1,7 @@
+127.0.0.1 - - [16/May/2024:09:09:58 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [16/May/2024:09:10:00 +0530] "GET /SessionTracking1/session1.html HTTP/1.1" 200 346
+0:0:0:0:0:0:0:1 - - [16/May/2024:09:10:10 +0530] "POST /SessionTracking1/session1 HTTP/1.1" 404 780
+127.0.0.1 - - [16/May/2024:09:11:47 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [16/May/2024:09:11:48 +0530] "GET /SessionTracking1/session1.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/May/2024:09:12:02 +0530] "POST /SessionTracking1/session1 HTTP/1.1" 200 181
+0:0:0:0:0:0:0:1 - - [16/May/2024:09:12:41 +0530] "GET /SessionTracking1/session2 HTTP/1.1" 200 5

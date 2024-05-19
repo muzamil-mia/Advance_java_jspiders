@@ -1,0 +1,9 @@
+127.0.0.1 - - [06/May/2024:14:22:17 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [06/May/2024:14:22:20 +0530] "GET /Shopify-Application/index.jsp HTTP/1.1" 200 2159
+0:0:0:0:0:0:0:1 - - [06/May/2024:14:22:20 +0530] "GET /Shopify-Application/index.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/May/2024:14:22:20 +0530] "GET /Shopify-Application/index.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/May/2024:14:22:21 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [06/May/2024:14:22:33 +0530] "GET /Shopify-Application/registerSeller.html HTTP/1.1" 200 1434
+0:0:0:0:0:0:0:1 - - [06/May/2024:14:22:33 +0530] "GET /Shopify-Application/registerSeller.css HTTP/1.1" 200 2368
+0:0:0:0:0:0:0:1 - - [06/May/2024:14:22:45 +0530] "GET /Shopify-Application/registerBuyer.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/May/2024:14:22:45 +0530] "GET /Shopify-Application/registerBuyer.css HTTP/1.1" 200 2368

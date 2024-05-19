@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\Hibernate\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1569471868.index
+3702953171.index
+1666093709.index
+1775702817.index
+2540883513.index
+1056023736.index
+3505062712.index

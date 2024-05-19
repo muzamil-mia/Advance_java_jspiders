@@ -1,0 +1,6 @@
+package studentSpring;
+
+public class Batch {
+	private int rNo;
+	private String Stream;
+}

@@ -1,0 +1,10 @@
+package studentSpring;
+
+public class Batch {
+	private int rNo;
+	private String Stream;
+	@Override
+	public String toString() {
+		return "Batch [rNo=" + rNo + ", Stream=" + Stream + "]";
+	}
+}

@@ -1,0 +1,12 @@
+127.0.0.1 - - [04/May/2024:02:06:16 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [04/May/2024:02:06:17 +0530] "GET /Shopify-Application/index.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/May/2024:02:06:54 +0530] "GET /Shopify-Application/index.jsp HTTP/1.1" 200 2147
+0:0:0:0:0:0:0:1 - - [04/May/2024:02:06:54 +0530] "GET /Shopify-Application/index.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/May/2024:02:07:02 +0530] "GET /Shopify-Application/registerBuyer.html HTTP/1.1" 200 1537
+0:0:0:0:0:0:0:1 - - [04/May/2024:02:07:02 +0530] "GET /Shopify-Application/buyerRegister.css HTTP/1.1" 404 792
+0:0:0:0:0:0:0:1 - - [04/May/2024:02:07:49 +0530] "GET /Shopify-Application/registerbuyer?first-name=muzamil&last-name=hussain&email=hussainmuzamil862%40gmail.com&pwd=muzamil%40123&phone=09149772570&wallet=1234&address=Anantnag+dooru+sadiwara+B%0D%0AAnantnag HTTP/1.1" 404 788
+127.0.0.1 - - [04/May/2024:02:11:58 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [04/May/2024:02:11:59 +0530] "GET /Shopify-Application/index.jsp HTTP/1.1" 200 2147
+0:0:0:0:0:0:0:1 - - [04/May/2024:02:12:04 +0530] "GET /Shopify-Application/registerBuyer.html HTTP/1.1" 200 1537
+0:0:0:0:0:0:0:1 - - [04/May/2024:02:12:04 +0530] "GET /Shopify-Application/registerBuyer.css HTTP/1.1" 200 2368
+0:0:0:0:0:0:0:1 - - [04/May/2024:02:12:35 +0530] "GET /Shopify-Application/registerbuyer?first-name=muzamil&last-name=hussain&email=hussainmuzamil862%40gmail.com&pwd=muzamil%40123&phone=09149772570&wallet=200000&address=Anantnag+dooru+sadiwara+B%0D%0AAnantnag HTTP/1.1" 500 1392
